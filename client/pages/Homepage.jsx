@@ -1,12 +1,12 @@
 import { useState } from "react";
 
 const MovieCard = ({ image, title, rating, badge = null, className = "" }) => (
-  <div className={`relative flex w-[234px] lg:w-[302px] flex-col gap-2.5 ${className}`}>
+  <div className={`relative flex w-[180px] sm:w-[234px] lg:w-[302px] flex-col gap-2.5 flex-shrink-0 ${className}`}>
     <div className="relative">
-      <img 
-        src={image} 
+      <img
+        src={image}
         alt={title}
-        className="w-full h-[365px] lg:h-[162px] object-cover rounded-lg"
+        className="w-full h-[280px] sm:h-[365px] lg:h-[162px] object-cover rounded-lg"
       />
       {badge && (
         <div className="absolute top-4 left-4 px-2.5 py-1 rounded-3xl bg-chill-primary-dark border border-chill-primary-dark">
@@ -38,7 +38,7 @@ const Navigation = () => {
   const [showDropdown, setShowDropdown] = useState(false);
 
   return (
-    <nav className="flex w-full px-20 py-6 justify-between items-center bg-chill-background relative z-50">
+    <nav className="flex w-full px-4 sm:px-8 lg:px-20 py-4 lg:py-6 justify-between items-center bg-chill-background relative z-50">
       {/* Left side - Logo and Nav Links */}
       <div className="flex items-center gap-20">
         {/* Logo */}
@@ -52,7 +52,7 @@ const Navigation = () => {
         </div>
 
         {/* Navigation Links */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-4 lg:gap-8">
           <a href="#" className="text-white text-lg font-medium leading-[140%] tracking-[0.2px] font-lato hover:text-chill-primary transition-colors">
             Series
           </a>
@@ -108,7 +108,7 @@ const Navigation = () => {
 };
 
 const HeroSection = () => (
-  <div className="relative w-full h-[587px] flex items-end">
+  <div className="relative w-full h-[400px] sm:h-[500px] lg:h-[587px] flex items-end">
     {/* Background Image */}
     <img 
       src="https://api.builder.io/api/v1/image/assets/TEMP/84bfaac522f65e27b66c727d843df2a3b715f248?width=2880"
@@ -117,19 +117,19 @@ const HeroSection = () => (
     />
     
     {/* Content Overlay */}
-    <div className="relative z-10 w-full max-w-[1280px] mx-auto px-20 pb-20">
-      <div className="flex flex-col gap-5 max-w-[668px]">
-        <h1 className="text-white text-5xl font-bold leading-[110%] font-lato">
+    <div className="relative z-10 w-full max-w-[1280px] mx-auto px-4 sm:px-8 lg:px-20 pb-8 sm:pb-16 lg:pb-20">
+      <div className="flex flex-col gap-3 sm:gap-5 max-w-[668px]">
+        <h1 className="text-white text-2xl sm:text-4xl lg:text-5xl font-bold leading-[110%] font-lato">
           Duty After School
         </h1>
-        <p className="text-white text-lg font-medium leading-[140%] tracking-[0.2px] font-lato">
+        <p className="text-white text-sm sm:text-base lg:text-lg font-medium leading-[140%] tracking-[0.2px] font-lato">
           Sebuah benda tak dikenal mengambil alih dunia. Dalam keputusasaan, 
           Departemen Pertahanan mulai merekrut lebih banyak tentara, termasuk siswa 
           sekolah menengah. Mereka pun segera menjadi pejuang garis depan dalam perang.
         </p>
         
-        <div className="flex justify-between items-center w-full mt-5">
-          <div className="flex items-center gap-2.5">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center w-full mt-3 sm:mt-5 gap-4 sm:gap-0">
+          <div className="flex items-center gap-2 sm:gap-2.5 flex-wrap">
             {/* Play Button */}
             <button className="flex px-7 py-2.5 items-center rounded-full bg-chill-primary-dark hover:bg-chill-primary-dark/80 transition-colors">
               <span className="text-white text-base font-bold leading-[140%] tracking-[0.2px] font-lato">
@@ -168,9 +168,9 @@ const HeroSection = () => (
 );
 
 const ContentSection = ({ title, children }) => (
-  <section className="w-full px-20 py-10">
-    <div className="flex flex-col gap-8">
-      <h2 className="text-white text-[32px] font-bold leading-[110%] font-lato">
+  <section className="w-full px-4 sm:px-8 lg:px-20 py-6 lg:py-10">
+    <div className="flex flex-col gap-4 lg:gap-8">
+      <h2 className="text-white text-xl sm:text-2xl lg:text-[32px] font-bold leading-[110%] font-lato">
         {title}
       </h2>
       <div className="relative">
@@ -181,14 +181,14 @@ const ContentSection = ({ title, children }) => (
 );
 
 const ScrollableRow = ({ children }) => (
-  <div className="flex gap-6 overflow-x-auto scrollbar-hide pb-4">
+  <div className="flex gap-3 sm:gap-4 lg:gap-6 overflow-x-auto scrollbar-hide pb-4">
     {children}
   </div>
 );
 
 const Footer = () => (
-  <footer className="w-full px-20 py-15 border-t border-chill-border bg-chill-background">
-    <div className="flex justify-between items-start">
+  <footer className="w-full px-4 sm:px-8 lg:px-20 py-8 lg:py-15 border-t border-chill-border bg-chill-background">
+    <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-0">
       {/* Left Column - Logo and Copyright */}
       <div className="flex flex-col gap-6">
         <div className="flex h-11 items-center gap-1">
@@ -205,11 +205,11 @@ const Footer = () => (
       </div>
 
       {/* Right Columns - Links */}
-      <div className="flex gap-40">
+      <div className="flex flex-col sm:flex-row gap-8 sm:gap-20 lg:gap-40">
         {/* Genre Column */}
         <div className="flex flex-col gap-4">
           <h3 className="text-white text-base font-bold font-lato">Genre</h3>
-          <div className="flex gap-7">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-7">
             <div className="flex flex-col gap-3">
               <a href="#" className="text-chill-text-secondary text-base font-medium font-lato hover:text-white">Aksi</a>
               <a href="#" className="text-chill-text-secondary text-base font-medium font-lato hover:text-white">Anak-anak</a>
