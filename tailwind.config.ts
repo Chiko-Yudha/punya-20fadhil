@@ -2,7 +2,7 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./client/**/*.{ts,tsx}"],
+  content: ["./client/**/*.{js,jsx,ts,tsx}"],
   prefix: "",
   theme: {
     container: {
@@ -13,7 +13,25 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'londrina': ['Londrina Solid', 'sans-serif'],
+        'lato': ['Lato', 'sans-serif'],
+      },
       colors: {
+        chill: {
+          primary: '#3254FF',
+          'primary-dark': '#0F1E93',
+          background: '#181A1C',
+          paper: '#22282A',
+          body: '#2F3334',
+          extra: '#3D4142',
+          border: 'rgba(231, 227, 252, 0.23)',
+          error: '#B71F1D',
+          'text-primary': '#FFFFFF',
+          'text-secondary': '#C1C2C4',
+          'text-disabled': '#9D9EA1',
+          'info-bg': 'rgba(205, 241, 255, 0.30)',
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
